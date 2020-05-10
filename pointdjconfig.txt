@@ -1,0 +1,4 @@
+{
+"topics":["channel-points-channel-v1.YOURCHANNELIDHERE"],
+"oauth":"YOURAUTHTOKENHERE"
+}
