@@ -59,9 +59,10 @@ def on_message(ws, message):
       print("MESSAGESANsub:"+str(json.dumps(messagesub, indent=4, sort_keys=True)))
       redeemed_by=str(messagesub["data"]["redemption"]["user"]["display_name"])
       user_input=str(messagesub["data"]["redemption"]["user_input"])
-      reward_name=str(messagesub["data"]["redemption"]["reward"]["prompt"])
+      reward_name=str(messagesub["data"]["redemption"]["reward"]["title"])
       print("SPECIAL REWARD REDEEMED: "+reward_name+" "+user_input+" "+redeemed_by)
-      playSound(user_input)
+      if (reward_name.lower()=="play a sound"):
+        playSound(user_input)
     else:
       print(json.dumps(json.loads(message), indent=4, sort_keys=True))
 
